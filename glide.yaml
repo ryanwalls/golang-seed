@@ -1,0 +1,12 @@
+package: github.com/ryanwalls/golang-seed
+import:
+- package: github.com/inconshreveable/log15
+  subpackages:
+  - ext
+- package: github.com/spf13/cobra
+- package: github.com/spf13/viper
+  subpackages:
+  - remote
+- package: github.com/stretchr/testify
+  subpackages:
+  - /assert
