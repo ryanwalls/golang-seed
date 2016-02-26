@@ -36,7 +36,9 @@ func EnvironmentSpecificConfig(v *viper.Viper, env string) *viper.Viper {
 	v.AddConfigPath(".")
 	v.AddConfigPath("../")
 	v.AddConfigPath("config/")
+	v.AddConfigPath("../config/")
 	v.SetConfigName("config-common")
+	v.SetConfigType("yml")
 	if err := v.ReadInConfig(); err != nil {
 		panic(fmt.Errorf("Fatal error reading common config file: %s \n", err))
 	}
@@ -58,7 +60,7 @@ func EnvironmentSpecificConfig(v *viper.Viper, env string) *viper.Viper {
 
 func mergeInConfig(v *viper.Viper, configName, configType string) {
 	v.SetConfigType(configType)
-	configPaths := []string{configName, "../" + configName, "config/" + configName}
+	configPaths := []string{configName, "../" + configName, "config/" + configName, "../config/" + configName}
 	configFilePath := ""
 	for _, path := range configPaths {
 		if b, _ := exists(path); b {
