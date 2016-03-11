@@ -8,6 +8,8 @@ Seed project for starting a dockerized, golang project.  Features include:
 Feel free to fork this repo to start your own project.  The rest of the README below
 assumes you are using this as a template and will fill in extra details.  
 
+If you want to duplicate without forking see: https://help.github.com/articles/duplicating-a-repository
+
 ## Structure
 
 * `commands` - add commands to execute/start your code in this package. You should not have to modify `main.go`.
