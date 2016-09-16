@@ -68,13 +68,12 @@ Create `$GOPATH\src\github.com\<your github username/organization>` folder.
 In the `$GOPATH\src\github.com\<your github username/organization>` folder, clone the repo. When finished you should have the folder: `$GOPATH\src\github.com\<your github username/organization>\golang-seed`
 
 ### Packages
-We use go 1.5's [new vendoring feature](https://docs.google.com/document/d/1Bz5-UB7g2uPBdOx-rw5t9MxJwkfpx90cqG9AFL0JAYo/edit) and https://github.com/Masterminds/glide to manage package dependencies.
+We use https://github.com/Masterminds/glide to manage package dependencies.
 
-1.  Set an environment variable:  `GO15VENDOREXPERIMENT=1`
-2.  Install glide and add it to your path.  See https://github.com/Masterminds/glide#install
-3.  Inside `golang-seed` directory run  `glide install`.  This downloads all package dependencies
+1.  Install glide and add it to your path.  See https://github.com/Masterminds/glide#install
+2.  Inside `golang-seed` directory run  `glide install --strip-vendor`.  This downloads all package dependencies
 to a `vendor/` folder.
-4.  If you need to add more dependencies to the project at any point run
+3.  If you need to add more dependencies to the project at any point run
 `glide get <package name>`, which will add the package to the `glide.yaml`.  If
 you want to update dependencies to the latest version run `glide up`, this will update
 the `glide.lock` file with the latest dependencies.  
