@@ -1,22 +1,20 @@
-FROM golang:1.5
+FROM golang:1.7
 
 RUN apt-get update && apt-get install -y git
 
-# Use go 1.5 vendoring
-ENV GO15VENDOREXPERIMENT=1
 ENV APPLICATION_NAME=golang-seed
 
 # Install glide
 WORKDIR $GOPATH/src/github.com/Masterminds
 RUN git clone https://github.com/Masterminds/glide.git
-RUN cd glide && git checkout 0.8.3 && make bootstrap && make install
+RUN cd glide && git checkout v0.12.2 && make bootstrap-dist && make install
 
 RUN mkdir -p $GOPATH/src/github.com/3dsim/$APPLICATION_NAME
 
 COPY . $GOPATH/src/github.com/3dsim/$APPLICATION_NAME
 
 WORKDIR $GOPATH/src/github.com/3dsim/$APPLICATION_NAME
-RUN glide install
+RUN glide install --strip-vendor
 RUN go test $(glide novendor)
 # Must run after glide installs 3rd party (vendor) dependencies.  Installs binary on path.
 RUN go install
