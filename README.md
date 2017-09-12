@@ -47,16 +47,14 @@ choco install golang
 https://golang.org/doc/install
 
 ### IDE
-Install an IDE.  Recommend Atom https://atom.io
+* Install an IDE.  Recommend Visual Studio Code
+* Create a directory for your go projects, ex: `c:\source\go`
 
-#### Setting up Intellisense in Atom (Mac/Windows)
-Install `go-plus` package https://github.com/joefitzgerald/go-plus
-
-If Intellisense isn't working, try the following
-```
-gocode close
-gocode -s -debug
-```
+#### Setting up Intellisense in Visual Studio Code (Mac/Windows)
+Install `go` extension in visual studio code.
+* Open extensions window (cmd + shift + x)
+* Type `go`
+* Install the one with author of lukehoban.
 
 ### Setting up Code directories
 Assuming your workspace folder is `c:\source\go`, setup  environment variable `GOPATH = c:\source\go`
@@ -109,16 +107,14 @@ golang-seed
 ## Coding tips
 
 ### Testing
-Generate mocks using https://github.com/vektra/mockery
-
+* Generate mocks using counterfeiter
 ```
-go get github.com/vektra/mockery/.../
-$GOPATH/bin/mockery -name <interface name> -recursive
+go get github.com/maxbrunsfeld/counterfeiter
 ```
 
-If you need to generate mocks in the same package to avoid circular dependencies use
+From project folder or inside package folder
 ```
-$GOPATH/bin/mockery -name <interface name> -recursive -inpkg
+go generate
 ```
 
 ## Contributing code

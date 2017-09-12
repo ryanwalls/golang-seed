@@ -1,4 +1,4 @@
-FROM golang:1.7
+FROM golang:1.9
 
 RUN apt-get update && apt-get install -y git
 
@@ -7,7 +7,7 @@ ENV APPLICATION_NAME=golang-seed
 # Install glide
 WORKDIR $GOPATH/src/github.com/Masterminds
 RUN git clone https://github.com/Masterminds/glide.git
-RUN cd glide && git checkout v0.12.2 && make bootstrap-dist && make install
+RUN cd glide && git checkout v0.12.3 && make bootstrap-dist && make install
 
 RUN mkdir -p $GOPATH/src/github.com/3dsim/$APPLICATION_NAME
 
