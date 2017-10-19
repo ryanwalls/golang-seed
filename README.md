@@ -1,4 +1,4 @@
-# golang-seed
+# golang-seed *Description required
 Seed project for starting a dockerized, golang project.  Features include:
 * Command parsing with https://github.com/spf13/cobra
 * Logging setup with https://github.com/inconshreveable/log15
@@ -9,6 +9,17 @@ Feel free to fork this repo to start your own project.  The rest of the README b
 assumes you are using this as a template and will fill in extra details.  
 
 If you want to duplicate without forking see: https://help.github.com/articles/duplicating-a-repository
+
+## Technical Specifications *required
+
+### Platforms Supported
+For all projects, it will be MacOS, Windows, and Linux or N/A
+
+### Inputs / Outputs
+Briefly describe inputs and expected outputs if needed
+
+### Resource Requirements
+Memory / CPU if applicable
 
 ## Structure
 
@@ -122,7 +133,7 @@ Read this article and follow the steps they outline: http://scottchacon.com/2011
 
 All PRs should be signed off by a member of the team before merging.
 
-## Team
+## Team *Contributors Required
 * List
 * Your
 * Team
